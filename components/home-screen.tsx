@@ -9,6 +9,7 @@ import { useEffect, useState } from "react"
 
 export function HomeScreen() {
   const [progress, setProgress] = useState(0)
+  const [imageError, setImageError] = useState(false)
   const { signOut, user } = useAuth()
   const router = useRouter()
 
@@ -29,7 +30,7 @@ export function HomeScreen() {
   return (
     <MobileShell hasBottomNav noScroll className="relative">
       {/* Semi-transparent white container frame */}
-      <div className="absolute inset-3 top-6 bottom-20 bg-white/50 backdrop-blur-md rounded-3xl shadow-lg flex flex-col overflow-hidden">
+      <div className="absolute inset-3 top-6 bottom-24 bg-white/50 backdrop-blur-md rounded-3xl shadow-lg flex flex-col overflow-hidden">
         <header className="text-center pt-6 pb-4 relative">
           <h1 className="text-5xl font-bold tracking-tight">
             <span className="rainbow-text">Be Weird</span>
@@ -48,13 +49,21 @@ export function HomeScreen() {
         {/* Character Section */}
         <div className="flex justify-center py-4">
           <div className="relative w-36 h-44 drop-shadow-md">
-            <Image 
-              src="/ubc-bird.png" 
-              alt="UBC Thunderbird mascot" 
-              fill 
-              className="object-contain" 
-              priority 
-            />
+            {imageError ? (
+              // Fallback emoji if image fails to load
+              <div className="w-full h-full flex items-center justify-center text-8xl">
+                🐦
+              </div>
+            ) : (
+              <Image 
+                src="/ubc-bird.png" 
+                alt="UBC Thunderbird mascot" 
+                fill 
+                className="object-contain" 
+                priority
+                onError={() => setImageError(true)}
+              />
+            )}
           </div>
         </div>
 
