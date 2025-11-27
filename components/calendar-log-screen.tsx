@@ -13,13 +13,13 @@ interface CompletedQuest {
 }
 
 const MOCK_QUESTS: CompletedQuest[] = [
-  { id: "1", title: "High-five a tree", photoUrl: "/tree-high-five-nature.jpg", date: new Date(2025, 10, 3) },
-  { id: "2", title: "Wear mismatched socks", photoUrl: "/colorful-mismatched-socks.jpg", date: new Date(2025, 10, 7) },
-  { id: "3", title: "Talk to a plant", photoUrl: "/person-talking-to-houseplant.jpg", date: new Date(2025, 10, 12) },
-  { id: "4", title: "Skip instead of walk", photoUrl: "/person-skipping-joyfully.jpg", date: new Date(2025, 10, 15) },
-  { id: "5", title: "Draw a silly face", photoUrl: "/silly-doodle-face-drawing.jpg", date: new Date(2025, 10, 20) },
-  { id: "6", title: "Eat lunch backwards", photoUrl: "/dessert-first-meal.jpg", date: new Date(2025, 10, 25) },
-  { id: "7", title: "Dance for 30 seconds", photoUrl: "/person-dancing-happy.jpg", date: new Date(2025, 10, 26) },
+  { id: "1", title: "High-five a tree", photoUrl: "/tree-high-five-nature.png", date: new Date(2025, 10, 3) },
+  { id: "2", title: "Wear mismatched socks", photoUrl: "/colorful-mismatched-socks.png", date: new Date(2025, 10, 7) },
+  { id: "3", title: "Talk to a plant", photoUrl: "/person-talking-to-houseplant.png", date: new Date(2025, 10, 12) },
+  { id: "4", title: "Skip instead of walk", photoUrl: "/person-skipping-joyfully.png", date: new Date(2025, 10, 15) },
+  { id: "5", title: "Draw a silly face", photoUrl: "/silly-doodle-face-drawing.png", date: new Date(2025, 10, 20) },
+  { id: "6", title: "Eat lunch backwards", photoUrl: "/dessert-first-meal.png", date: new Date(2025, 10, 25) },
+  { id: "7", title: "Dance for 30 seconds", photoUrl: "/person-dancing-happy.png", date: new Date(2025, 10, 26) },
 ]
 
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
