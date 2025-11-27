@@ -2,7 +2,6 @@
 
 import { MobileShell } from "./ui/mobile-shell"
 import { QuestCard } from "./ui/quest-card"
-import { RainbowWave } from "./ui/rainbow-wave"
 import { Sparkles } from "lucide-react"
 
 type Difficulty = "easy" | "medium" | "hard"
@@ -18,49 +17,55 @@ interface Quest {
 const QUESTS: Quest[] = [
   {
     id: "1",
-    emoji: "🌿",
-    title: "Touch some grass",
+    emoji: "🇮🇹",
+    title: "Draw a recreation of Italian brainrot",
     difficulty: "easy",
-    description: "Go outside and literally touch grass for 30 seconds.",
+    description: "Channel your inner artist and recreate that iconic Italian brainrot meme.",
   },
   {
     id: "2",
-    emoji: "🎵",
-    title: "Hum to a stranger",
-    difficulty: "medium",
-    description: "Hum your favorite tune near someone you don't know.",
+    emoji: "🌀",
+    title: "Spin in a circle for 5 seconds and take a selfie mid-spin",
+    difficulty: "easy",
+    description: "Embrace the chaos and capture the blur!",
   },
   {
     id: "3",
-    emoji: "📝",
-    title: "Write a tiny poem",
+    emoji: "📸",
+    title: "Photograph an object that represents your vibe today",
     difficulty: "medium",
-    description: "Write a 3-line poem about the last thing you ate.",
+    description: "Find something that speaks to your current energy and snap it.",
   },
   {
     id: "4",
-    emoji: "🌀",
-    title: "Spin until dizzy",
-    difficulty: "easy",
-    description: "Find a safe space and spin around 5 times. Embrace the chaos.",
+    emoji: "📝",
+    title: "Leave a tiny positive note in a library book",
+    difficulty: "medium",
+    description: "Spread joy to a future reader with a small surprise message.",
   },
   {
     id: "5",
-    emoji: "💌",
-    title: "Compliment a stranger",
+    emoji: "🎨",
+    title: "Draw something upside-down using only your non-dominant hand",
     difficulty: "hard",
-    description: "Give a genuine compliment to someone you've never met.",
+    description: "Double the challenge, double the weirdness!",
+  },
+  {
+    id: "6",
+    emoji: "🧦",
+    title: "Run an errand with socks on your hands",
+    difficulty: "hard",
+    description: "Go to a store or cafe. Yes, with sock mittens. Own it.",
   },
 ]
+
+const DIFFICULTY_ORDER: Record<Difficulty, number> = { easy: 1, medium: 2, hard: 3 }
+const SORTED_QUESTS = [...QUESTS].sort((a, b) => DIFFICULTY_ORDER[a.difficulty] - DIFFICULTY_ORDER[b.difficulty])
 
 export function DailyQuestsScreen() {
   return (
     <MobileShell hasBottomNav className="relative">
-      <div className="absolute top-0 left-0 right-0 opacity-40">
-        <RainbowWave />
-      </div>
-
-      <div className="sticky top-0 z-10 bg-gradient-to-b from-sky/90 to-transparent backdrop-blur-sm -mx-6 px-6 pt-6 pb-6">
+      <div className="pt-6 pb-4">
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange to-pink flex items-center justify-center">
             <Sparkles className="w-5 h-5 text-white" />
@@ -72,9 +77,8 @@ export function DailyQuestsScreen() {
         </div>
       </div>
 
-      {/* Quest list */}
       <div className="flex flex-col gap-4 mt-2 pb-4">
-        {QUESTS.map((quest) => (
+        {SORTED_QUESTS.map((quest) => (
           <QuestCard key={quest.id} quest={quest} />
         ))}
       </div>
