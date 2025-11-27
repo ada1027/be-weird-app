@@ -1,6 +1,6 @@
 'use client';
 
-import { useAuth } from '@/components/contexts/AuthContexts';
+import { useAuth } from '@/app/contexts/AuthContexts';
 import { HomeScreen } from '@/components/home-screen';
 import LoginPage from '@/components/LoginPage';
 

@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Baloo_2 } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { AuthProvider } from "@/app/contexts/AuthContexts"
 import "./globals.css"
 
 const baloo = Baloo_2({
@@ -48,7 +49,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${baloo.className} font-sans antialiased`}>
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
         <Analytics />
       </body>
     </html>
