@@ -1,58 +1,68 @@
 "use client"
 
 import { MobileShell } from "@/components/ui/mobile-shell"
-import { WeirdButton } from "@/components/ui/weird-button"
+import Link from "next/link"
+import Image from "next/image"
+import { useEffect, useState } from "react"
 
 export function HomeScreen() {
+  const [progress, setProgress] = useState(0)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setProgress(40), 300)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
-    <MobileShell hasBottomNav>
-      {/* Logo */}
-      <header className="text-center mb-8">
-        <h1 className="text-3xl font-extrabold tracking-tight">
-          <span className="text-coral">Be</span> <span className="text-foreground">Weird</span>
-          <span className="inline-block ml-1 text-accent animate-bounce">~</span>
-        </h1>
-      </header>
+    <MobileShell hasBottomNav className="relative">
+      {/* Semi-transparent white container frame */}
+      <div className="absolute inset-3 top-6 bottom-20 bg-white/50 backdrop-blur-md rounded-3xl shadow-lg flex flex-col overflow-hidden">
+        <header className="text-center pt-6 pb-4">
+          <h1 className="text-5xl font-bold tracking-tight">
+            <span className="rainbow-text">Be Weird</span>
+          </h1>
+          <p className="text-slate-400 text-base font-medium mt-2">Your daily dose of chaos</p>
+        </header>
 
-      {/* Main Card */}
-      <main className="flex-1 flex flex-col">
-        <div className="bg-card rounded-3xl shadow-xl shadow-foreground/5 p-6 flex flex-col items-center text-center">
-          {/* Illustration Placeholder */}
-          <div className="w-full aspect-square max-w-[240px] bg-gradient-to-br from-peach via-lavender to-sky rounded-2xl flex items-center justify-center mb-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.4),transparent_50%)]" />
-            <div className="text-6xl select-none" aria-hidden="true">
-              <span className="inline-block animate-pulse">🌀</span>
-              <span className="inline-block -ml-2 animate-pulse [animation-delay:100ms]">✨</span>
-              <span className="inline-block -ml-2 animate-pulse [animation-delay:200ms]">🎲</span>
-            </div>
-          </div>
-
-          {/* Hero Copy */}
-          <p className="text-sm text-muted-foreground font-medium mb-2">School, home, school, home…</p>
-          <h2 className="text-2xl font-bold text-foreground mb-4 text-balance">
-            Break the loop. <span className="text-primary">Be weird.</span>
-          </h2>
-          <p className="text-muted-foreground text-sm leading-relaxed max-w-[280px] mb-8">
-            Student life can feel like a never-ending repeat button. We forget tiny joys because they seem
-            "inefficient." Get a small, healthy, delightful weird mission every day.
-          </p>
-
-          {/* Buttons */}
-          <div className="w-full flex flex-col gap-3">
-            <WeirdButton variant="primary" size="lg" className="w-full">
-              See today&apos;s quests
-            </WeirdButton>
-            <WeirdButton variant="ghost" size="default" className="w-full">
-              Browse past weirdness
-            </WeirdButton>
+        {/* Character Section */}
+        <div className="flex justify-center py-4">
+          <div className="relative w-36 h-44 drop-shadow-md">
+            <Image src="/ubc-bird.png" alt="UBC Thunderbird mascot" fill className="object-contain" priority />
           </div>
         </div>
-      </main>
 
-      {/* Footer hint */}
-      <footer className="mt-6 text-center">
-        <p className="text-xs text-muted-foreground">Swipe up for more chaos</p>
-      </footer>
+        <div className="px-8 pb-4">
+          <p className="text-center text-slate-600 font-semibold text-base mb-2">Today's Progress</p>
+          <div className="w-full h-5 bg-slate-200/80 rounded-full overflow-hidden">
+            <div
+              className="h-full rainbow-gradient-animated rounded-full transition-all duration-700 ease-out"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          <p className="text-center text-slate-400 text-sm mt-1.5">{progress}% complete</p>
+        </div>
+
+        <div className="px-6 pb-4">
+          <div className="bg-white/60 rounded-2xl p-5 text-center">
+            <h2 className="text-base font-bold text-slate-700 mb-3">Daily Vibes Forecast ✨🌈</h2>
+            <p className="text-sm text-slate-500">Today's vibe: 73% unhinged 😵‍💫</p>
+            <p className="text-sm text-slate-500 mt-1">Emotion: pesto-coded 🧃🌿</p>
+          </div>
+        </div>
+
+        <div className="mt-auto px-6 pb-6 flex flex-col gap-3">
+          <Link href="/quests" className="w-full">
+            <button className="w-full py-3 px-6 rounded-full bg-gradient-to-r from-sky-300 via-pink-300 to-purple-300 text-white font-semibold text-base shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-200">
+              See today's quests
+            </button>
+          </Link>
+          <Link href="/calendar" className="w-full">
+            <button className="w-full py-3 px-6 rounded-full bg-gradient-to-r from-teal-300 via-cyan-300 to-indigo-300 text-white font-semibold text-base shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-200">
+              Browse past weirdness
+            </button>
+          </Link>
+        </div>
+      </div>
     </MobileShell>
   )
 }
