@@ -14,23 +14,24 @@ body {
   min-height: 100vh;
 }
 
+/* Updated to solid #9ED6FF background, removed gradient */
 #iphone-wrapper {
   width: 393px;
   height: 852px;
-  background: linear-gradient(180deg, #7dd3fc 0%, #a5f3fc 50%, #c4b5fd 100%);
+  background: #9ed6ff;
   border-radius: 40px;
-  box-shadow: 0 0 60px rgba(168, 85, 247, 0.4), 0 0 100px rgba(251, 146, 60, 0.2);
+  box-shadow: 0 0 60px rgba(158, 214, 255, 0.4), 0 0 100px rgba(158, 214, 255, 0.2);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-/* New psychedelic color palette - bright, bold, 70s groovy */
+/* Updated --background to match new solid color */
 :root {
-  --background: #7dd3fc;
+  --background: #9ed6ff;
   --foreground: #1e1b4b;
-  --card: rgba(255, 255, 255, 0.85);
+  --card: rgba(255, 255, 255, 0.5);
   --card-foreground: #1e1b4b;
   --popover: #ffffff;
   --popover-foreground: #1e1b4b;
@@ -49,7 +50,6 @@ body {
   --ring: #f472b6;
   --radius: 1.5rem;
 
-  /* Psychedelic Be Weird palette - rainbow waves */
   --coral: #fb7185;
   --mint: #34d399;
   --lavender: #c084fc;
@@ -79,6 +79,16 @@ body {
   }
   50% {
     background-position: 100% 50%;
+  }
+}
+
+/* Added smooth horizontal rainbow shift for buttons/progress */
+@keyframes rainbow-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
   }
 }
 
@@ -118,6 +128,13 @@ body {
   animation: rainbow-wave 4s ease-in-out infinite;
 }
 
+/* Added animated rainbow gradient class for buttons */
+.rainbow-gradient-animated {
+  background: linear-gradient(90deg, #f472b6, #fb923c, #facc15, #34d399, #38bdf8, #c084fc, #f472b6);
+  background-size: 200% 100%;
+  animation: rainbow-shift 3s linear infinite;
+}
+
 .rainbow-text {
   background: linear-gradient(90deg, #f472b6, #fb923c, #facc15, #34d399, #38bdf8, #c084fc);
   background-size: 200% auto;
@@ -140,7 +157,6 @@ body {
 }
 
 @theme inline {
-  /* Bubbly rounded font */
   --font-sans: "Nunito", "Nunito Fallback", sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
