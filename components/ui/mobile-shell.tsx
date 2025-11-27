@@ -5,17 +5,22 @@ interface MobileShellProps {
   children: ReactNode
   className?: string
   hasBottomNav?: boolean
+  noScroll?: boolean
 }
 
-export function MobileShell({ children, className, hasBottomNav = false }: MobileShellProps) {
+export function MobileShell({ children, className, hasBottomNav = false, noScroll = false }: MobileShellProps) {
   return (
-    <div className="min-h-screen bg-background flex justify-center">
+    <div className={cn(
+      "bg-background flex justify-center items-center fixed inset-0",
+      noScroll ? "overflow-hidden" : "overflow-auto"
+    )}>
       <div
         className={cn(
-          "w-full max-w-[430px] min-h-screen",
-          "px-6 pt-14",
-          hasBottomNav ? "pb-24" : "pb-8",
+          "w-full max-w-[430px] h-full",
+          "px-6 pt-10",
+          hasBottomNav ? "pb-4" : "pb-8",
           "flex flex-col",
+          noScroll && "overflow-hidden",
           className,
         )}
       >

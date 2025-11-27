@@ -14,7 +14,7 @@ export function HomeScreen() {
   }, [])
 
   return (
-    <MobileShell hasBottomNav className="relative">
+    <MobileShell hasBottomNav noScroll className="relative">
       {/* Semi-transparent white container frame */}
       <div className="absolute inset-3 top-6 bottom-20 bg-white/50 backdrop-blur-md rounded-3xl shadow-lg flex flex-col overflow-hidden">
         <header className="text-center pt-6 pb-4">
