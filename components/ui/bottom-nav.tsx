@@ -7,9 +7,9 @@ import { usePathname } from "next/navigation"
 
 const tabs = [
   { href: "/", label: "Home", icon: Home },
-  { href: "/quests", label: "Quests", icon: Sparkles },
-  { href: "/calendar", label: "Calendar", icon: Calendar },
-  { href: "/feed", label: "Feed", icon: Users },
+  { href: "/main/quests", label: "Quests", icon: Sparkles },
+  { href: "/main/calendar", label: "Calendar", icon: Calendar },
+  { href: "/main/feed", label: "Feed", icon: Users },
 ]
 
 interface BottomNavProps {
