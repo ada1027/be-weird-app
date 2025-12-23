@@ -12,4 +12,7 @@ In the works:
 - growing a character of choice as you do more side quests
 - upvote or downvote someone's photo in relevance to their side quest
 
-<img width="470" height="895" alt="image" src="https://github.com/user-attachments/assets/99e7fcd8-013f-40fa-831c-818a28d1bf3e" />
+<img width="415" height="872" alt="image" src="https://github.com/user-attachments/assets/de8e4860-25ba-4b9d-ad2b-208d8d9dbaf8" />
+<img width="412" height="871" alt="image" src="https://github.com/user-attachments/assets/940c5ee4-6e44-42fc-97cb-dfca1a6aa662" />
+<img width="423" height="877" alt="image" src="https://github.com/user-attachments/assets/8911ebc2-0a53-4699-a2a2-4bfa6212be6d" />
+<img width="414" height="869" alt="image" src="https://github.com/user-attachments/assets/caf7fa79-76e9-4416-98bd-81ee2fdc16f2" />
