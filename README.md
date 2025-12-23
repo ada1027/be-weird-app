@@ -11,3 +11,5 @@ Features include:
 In the works:
 - growing a character of choice as you do more side quests
 - upvote or downvote someone's photo in relevance to their side quest
+
+<img width="470" height="895" alt="image" src="https://github.com/user-attachments/assets/99e7fcd8-013f-40fa-831c-818a28d1bf3e" />
