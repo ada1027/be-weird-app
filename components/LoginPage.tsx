@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useAuth } from '../app/contexts/AuthContexts';
 
-export default function LoginPage() {
+export default function LoginPageScreen() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

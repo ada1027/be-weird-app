@@ -21,7 +21,7 @@ export function HomeScreen() {
   const handleLogout = async () => {
     try {
       await signOut()
-      router.push('/login')
+      router.push('/')
     } catch (error) {
       console.error('Logout error:', error)
     }
@@ -81,7 +81,7 @@ export function HomeScreen() {
         <div className="px-6 pb-4">
           <div className="bg-white/60 rounded-2xl p-5 text-center">
             <h2 className="text-base font-bold text-slate-700 mb-3">Daily Vibes Forecast ✨🌈</h2>
-            <p className="text-sm text-slate-500">Today's vibe: 73% unhinged 😵‍💫</p>
+            <p className="text-sm text-slate-500">Today's vibe: 67% unhinged 😵‍💫</p>
             <p className="text-sm text-slate-500 mt-1">Emotion: pesto-coded 🧃🌿</p>
           </div>
         </div>
