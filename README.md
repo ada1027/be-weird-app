@@ -6,7 +6,8 @@ Features include:
 - Custom Personal Tasks
 - Calendar Photo Log to revisit history of side quests
 - Friends Feed that mimics a social media scroll, with likes and comments
--  Completion Rewards to encourage consistency
+- Completion Rewards to encourage consistency
+- <a href="https://v0-be-weird-app-design.vercel.app/">Click to see the demo!</a>
 
 In the works:
 - growing a character of choice as you do more side quests
